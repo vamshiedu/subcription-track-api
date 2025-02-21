@@ -1,172 +1,93 @@
-<div align="center">
-  <br />
-    <a href="https://youtu.be/rOpEN1JDaD0?si=WfOjLV57WfR9x6QK" target="_blank">
-      <img src="https://i.ibb.co/xtTbHkfs/Readme-Thumbnail.png" alt="Project Banner">
-    </a>
-  <br />
-  
-  <div>
-    <img src="https://img.shields.io/badge/node.js-339933?style=for-the-badge&logo=Node.js&logoColor=white" alt="node.js" />
-    <img src="https://img.shields.io/badge/express.js-000000?style=for-the-badge&logo=express&logoColor=white" alt="express.js" />
-    <img src="https://img.shields.io/badge/-MongoDB-13aa52?style=for-the-badge&logo=mongodb&logoColor=white" alt="mongodb" />
-  </div>
+# Subscription Tracker API
 
-  <h3 align="center">A Subscription Management System API</h3>
+This is a Node.js API for managing user subscriptions. It allows users to sign up, sign in, create subscriptions, and receive reminders for upcoming renewals.
 
-   <div align="center">
-     Build this project step by step with our detailed tutorial on <a href="https://www.youtube.com/@javascriptmastery/videos" target="_blank"><b>JavaScript Mastery</b></a> YouTube. Join the JSM family!
-    </div>
-</div>
+## Features
 
-## 📋 <a name="table">Table of Contents</a>
+- **User Authentication**:
+  - Sign up
+  - Sign in
+  - Sign out
 
-1. 🤖 [Introduction](#introduction)
-2. ⚙️ [Tech Stack](#tech-stack)
-3. 🔋 [Features](#features)
-4. 🤸 [Quick Start](#quick-start)
-5. 🕸️ [Snippets (Code to Copy)](#snippets)
-6. 🔗 [Assets](#links)
-7. 🚀 [More](#more)
+- **Subscription Management**:
+  - Create subscriptions
+  - Get user subscriptions
+  - Send reminders for upcoming renewals
 
-## 🚨 Tutorial
+- **Middleware**:
+  - Arcjet middleware for security
+  - Error handling middleware
 
-This repository contains the code corresponding to an in-depth tutorial available on our YouTube channel, <a href="https://www.youtube.com/@javascriptmastery/videos" target="_blank"><b>JavaScript Mastery</b></a>.
+## Getting Started
 
-If you prefer visual learning, this is the perfect resource for you. Follow our tutorial to learn how to build projects like these step-by-step in a beginner-friendly manner!
+### Prerequisites
 
-<a href="https://youtu.be/rOpEN1JDaD0?si=WfOjLV57WfR9x6QK" target="_blank"><img src="https://github.com/sujatagunale/EasyRead/assets/151519281/1736fca5-a031-4854-8c09-bc110e3bc16d" /></a>
-
-## <a name="introduction">🤖 Introduction</a>
-
-Build a **production-ready Subscription Management System API** that handles **real users, real money, and real business logic**.  
-
-Authenticate users using JWTs, connect a database, create models and schemas, and integrate it with ORMs. Structure the architecture of your API to ensure scalability and seamless communication with the frontend.  
-
-If you're getting started and need assistance or face any bugs, join our active Discord community with over **50k+** members. It's a place where people help each other out.
-
-<a href="https://discord.com/invite/n6EdbFJ" target="_blank"><img src="https://github.com/sujatagunale/EasyRead/assets/151519281/618f4872-1e10-42da-8213-1d69e486d02e" /></a>
-
-## <a name="tech-stack">⚙️ Tech Stack</a>
+Make sure you have the following installed:
 
 - Node.js
-- Express.js
+- npm (Node Package Manager)
 - MongoDB
 
-## <a name="features">🔋 Features</a>
+### Installation
 
-👉 **Advanced Rate Limiting and Bot Protection**: with Arcjet that helps you secure the whole app.
+1. Clone the repository:
 
-👉 **Database Modeling**: Models and relationships using MongoDB & Mongoose.
+   ```cmd
+   git clone https://github.com/vamshiedu/subscription-tracker-api.git
 
-👉 **JWT Authentication**: User CRUD operations and subscription management.
+2. Navigate into the project directory:
+    ```cmd
+    cd subscription-tracker-api
+  
+3. Install dependencies:
+    ```cmd
+    npm install
 
-👉 **Global Error Handling**: Input validation and middleware integration.
+### Environment Variables
 
-👉 **Logging Mechanisms**: For better debugging and monitoring.
+4. Create a `.env` file in the root directory and add the following environment variables:
 
-👉 **Email Reminders**: Automating smart email reminders with workflows using Upstash.
+    ```env
+    PORT=5500
+    SERVER_URL="http://localhost:5500"
+    NODE_ENV=development
+    DB_URI=<your_mongodb_uri>
+    JWT_SECRET=<your_jwt_secret>
+    JWT_EXPIRES_IN=1d
+    ARCJET_KEY=<your_arcjet_key>
+    ARCJET_ENV="development"
+    QSTASH_URL=<your_qstash_url>
+    QSTASH_TOKEN=<your_qstash_token>
+    EMAIL_PASSWORD=<your_email_password>
+    ```
 
-and many more, including code architecture and reusability
+5. Start the application:
 
-## <a name="quick-start">🤸 Quick Start</a>
+    ```cmd
+    npm run dev
+    ```
 
-Follow these steps to set up the project locally on your machine.
+The API will run on http://localhost:5500.
 
-**Prerequisites**
-
-Make sure you have the following installed on your machine:
-
-- [Git](https://git-scm.com/)
-- [Node.js](https://nodejs.org/en)
-- [npm](https://www.npmjs.com/) (Node Package Manager)
-
-**Cloning the Repository**
-
-```bash
-git clone https://github.com/adrianhajdin/subscription-tracker-api.git
-cd subscription-tracker-api
-```
-
-**Installation**
-
-Install the project dependencies using npm:
-
-```bash
-npm install
-```
-
-**Set Up Environment Variables**
-
-Create a new file named `.env.local` in the root of your project and add the following content:
-
-```env
-# PORT
-PORT=5500
-SERVER_URL="http://localhost:5500"
-
-# ENVIRONMENT
-NODE_ENV=development
-
-# DATABASE
-DB_URI=
-
-# JWT AUTH
-JWT_SECRET=
-JWT_EXPIRES_IN="1d"
-
-# ARCJET
-ARCJET_KEY=
-ARCJET_ENV="development"
-
-# UPSTASH
-QSTASH_URL=http://127.0.0.1:8080
-QSTASH_TOKEN=
-
-# NODEMAILER
-EMAIL_PASSWORD=
-```
-
-**Running the Project**
-
-```bash
-npm run dev
-```
-
-Open [http://localhost:5500](http://localhost:5500) in your browser or any HTTP client to test the project.
-
-## <a name="snippets">🕸️ Snippets</a>
-
-<details>
-<summary><code>Dummy JSON Data</code></summary>
-
-```json
-{
-  "name": "Javascript Mastery Elite Membership",
-  "price": 139.00,
-  "currency": "USD",
-  "frequency": "monthly",
-  "category": "Entertainment",
-  "startDate": "2025-01-20T00:00:00.000Z",
-  "paymentMethod": "Credit Card"
-}
-```
-
-</details>
-
-## <a name="links">🔗 Links</a>
-
-- **Arcjet** - [https://launch.arcjet.com/4g2R2e4](https://launch.arcjet.com/4g2R2e4)  
-- **Upstash** - [https://bit.ly/42ealiN](https://bit.ly/42ealiN)  
-- **Hostinger** - [https://hostinger.com/mastery10](https://hostinger.com/mastery10)  
-- **WebStorm** - [https://jb.gg/GetWebStormFree](https://jb.gg/GetWebStormFree)  
-
-## <a name="more">🚀 More</a>
-
-**Advance your skills with Next.js Pro Course**
-
-Enjoyed creating this project? Dive deeper into our PRO courses for a richer learning adventure. They're packed with
-detailed explanations, cool features, and exercises to boost your skills. Give it a go!
-
-<a href="https://jsmastery.pro/next15" target="_blank">
-   <img src="https://github.com/user-attachments/assets/b8760e69-1f81-4a71-9108-ceeb1de36741" alt="Project Banner">
-</a>
+API Endpoints
+  Auth
+    POST /api/v1/auth/sign-up - Sign up a new user
+    POST /api/v1/auth/sign-in - Sign in an existing user
+    POST /api/v1/auth/sign-out - Sign out the current user
+    Users
+    GET /api/v1/users - Get all users
+    GET /api/v1/users/:id - Get a specific user
+  Subscriptions
+    POST /api/v1/subscriptions - Create a new subscription
+    GET /api/v1/subscriptions/user/:id - Get subscriptions for a specific user
+  Workflows
+    POST /api/v1/workflows/subscription/reminder - Send reminders for subscription renewals
+Technologies Used
+  Backend: Node.js, Express
+  Database: MongoDB, Mongoose
+  Authentication: JWT
+  Email: Nodemailer
+  Security: Arcjet
+  Task Scheduling: Upstash Workflow
+  Contributing
+  Feel free to contribute to this project by creating issues or submitting pull requests.
