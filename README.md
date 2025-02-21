@@ -69,8 +69,8 @@ Make sure you have the following installed:
 
 The API will run on http://localhost:5500.
 
-API Endpoints
-    ```
+6. API Endpoints
+    ```cmd
   Auth
     POST /api/v1/auth/sign-up - Sign up a new user
     POST /api/v1/auth/sign-in - Sign in an existing user
@@ -84,8 +84,8 @@ API Endpoints
   Workflows
     POST /api/v1/workflows/subscription/reminder - Send reminders for subscription renewals
     ```
-Technologies Used
-```
+7. Technologies Used
+```cmd
   Backend: Node.js, Express
   Database: MongoDB, Mongoose
   Authentication: JWT
