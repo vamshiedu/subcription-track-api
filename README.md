@@ -70,6 +70,7 @@ Make sure you have the following installed:
 The API will run on http://localhost:5500.
 
 API Endpoints
+    ```
   Auth
     POST /api/v1/auth/sign-up - Sign up a new user
     POST /api/v1/auth/sign-in - Sign in an existing user
@@ -82,7 +83,9 @@ API Endpoints
     GET /api/v1/subscriptions/user/:id - Get subscriptions for a specific user
   Workflows
     POST /api/v1/workflows/subscription/reminder - Send reminders for subscription renewals
+    ```
 Technologies Used
+```
   Backend: Node.js, Express
   Database: MongoDB, Mongoose
   Authentication: JWT
@@ -91,3 +94,4 @@ Technologies Used
   Task Scheduling: Upstash Workflow
   Contributing
   Feel free to contribute to this project by creating issues or submitting pull requests.
+  ```
